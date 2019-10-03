@@ -6,6 +6,6 @@ export default function (at: Date = new Date()) {
   newSchoolYear.setFullYear(at.getFullYear())
   
   
-  if (at > newSchoolYear) return currentYear + "/" + (currentYear + 1)
-  else return (currentYear + 1) + "/" + currentYear
+  if (at > newSchoolYear) return currentYear + " / " + (currentYear + 1)
+  else return (currentYear + 1) + " / " + currentYear
 }
