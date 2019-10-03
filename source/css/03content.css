@@ -1,0 +1,41 @@
+/* CSS Document */
+
+/* TAGs-Selectors */
+p {
+	color: #333;
+	background: inherit;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	padding-top: 1.2em;
+}
+ul {
+	margin-top: 1.5em;
+}
+li {
+	margin-left: 1.5em;
+	padding-left: 0.5em;
+	line-height: 1.5em;
+}
+h1, h2, h3 {
+	color: #666;
+	background: inherit;
+	padding-top: 1.5em;
+}
+h1 {font-size: 150%}
+h2 {font-size: 130%}
+h3 {font-size: 110%}
+
+
+/* Class-Selectors */
+.headline {
+	font-size: 2vw;
+	font-weight: bold;
+	text-align: right;
+}
+.subtitle {
+	color: #555;
+	background: inherit;
+	font-size: 1.3vw;
+	font-weight: bold;
+	text-align: right;
+}

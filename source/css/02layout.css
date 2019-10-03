@@ -1,0 +1,59 @@
+/* CSS Document */
+
+/* TAG-Selectors */
+* {
+	margin: 0;
+	padding: 0;
+	border: #000 solid 0;
+}
+body {
+	color: #000;
+	background: #57d4f7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	font-weight: normal;
+	font-style: normal;
+}
+header,
+nav,
+main,
+aside {
+	color: #000;
+	background: inherit;
+	display: flex;
+}
+aside {
+	flex: 0.3;
+	width: 30%;
+}
+article {
+	flex: 0.7;
+}
+footer {
+	color: #000;
+	background: inherit;
+}
+
+/* Class-Selectors */
+
+.wrap {
+	color: #000;
+	background: inherit;
+	width: 50%;
+	min-height: 300px;
+	margin: auto;
+}
+.spaceTop {
+	margin-top: 15px;
+}
+.topLeft {
+	flex:  0.3;
+	margin-top: 55px;
+}
+.topRight {
+	flex: 0.7;
+}
+.resonsiv {
+	width: 100%;
+	height: auto;
+}
