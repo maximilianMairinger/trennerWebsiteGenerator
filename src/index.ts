@@ -7,6 +7,7 @@ import * as text2png from "text2png"
 import ask from "./ask";
 import schoolYear from "./schoolyear";
 import selectorMap from "./selectorMap"
+import upload from "./upload"
 
 require("xrray")(Array)
 const ncp = require('ncp').ncp
@@ -40,6 +41,10 @@ ask().then((options) => {
     let $ = cheerio.load(fs.readFileSync("./output/index.html"))
     $(selectorMap.yearHead).html("Schuljahr " + year)
     $(selectorMap.vornameHead).html("Arbeit von " + options.name + " " + options.year + "xHIT")
+
+
+    $(selectorMap.title).html(options.name + ": Home")
+    
 
     
     fs.writeFileSync('./output/imgLayout/footer02.png', text2png(options.name + " ::: Wexstraße 19-23 ::: 1200 Wien ::: " + options.username + "(at)student.tgm.ac.at", {color: "black"}));
@@ -93,6 +98,15 @@ ask().then((options) => {
   
       write("./output/index.html", $.html())
 
+
+      
+
+      rimraf('./output/01TREE/*', async () => {
+        await upload("test", options)
+
+        console.log("end");
+        
+      });
     })
     
   });
@@ -102,6 +116,8 @@ ask().then((options) => {
 function createSubpage(teacher: string, teachers: {[teacher: string]: string[]}, competence: string, $: CheerioStatic, options: any): CheerioStatic {
   $(selectorMap.yearHead).html("Schuljahr " + year)
   $(selectorMap.vornameHead).html("Arbeit von " + options.name + " " + options.year + "xHIT")
+
+  $(selectorMap.title).html(options.name + ": " + teacher + ": " + competence)
 
   $(selectorMap.footerImg).attr("src", "../imgLayout/footer02.png");
 

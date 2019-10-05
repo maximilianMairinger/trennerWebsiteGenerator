@@ -5,5 +5,5 @@ export default {
   sideNav: "body > div > main > aside",
   mainArticle: "body > div > main > article",
   footerImg: "body > div > footer > img",
-  temp: "body > div > main > article > h1:nth-child(2)",
+  title: "title",
 }

@@ -7,6 +7,7 @@ export default async function () {
     year: 4,
     upload: false,
     username: "mmairinger",
+    password: "",
     teachers: {
       Trenner: [
         "Smartphonebild",
