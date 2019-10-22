@@ -4,7 +4,6 @@ import * as path from "path";
 import * as rimraf from "rimraf";
 import * as write from "write"
 import * as text2png from "text2png"
-import ask from "./ask";
 import schoolYear from "./schoolyear";
 import selectorMap from "./selectorMap"
 import upload from "./upload"
@@ -16,9 +15,9 @@ ncp.limit = 16;
 let year = schoolYear()
 
 
-ask().then((options) => {
+export default (options) => {
   let showOptions = JSON.parse(JSON.stringify(options))
-  showOptions.password = "[hidden]"
+  if (showOptions.password) showOptions.password = "[hidden]"
   showOptions.schoolYear = year
   console.log("Executing with the following options.\n" + JSON.stringify(showOptions, null, 2) + "\n");
 
@@ -33,85 +32,85 @@ ask().then((options) => {
   
   console.log("Cloning source...");
   ncp("./source", "./output", function (err) {
-    if (err) return console.error(err);
+
+    rimraf('./output/01TREE', async () => {
+      if (err) return console.error(err);
     
-    console.log("Parsing Home...");
-    
-
-    let $ = cheerio.load(fs.readFileSync("./output/index.html"))
-    $(selectorMap.yearHead).html("Schuljahr " + year)
-    $(selectorMap.vornameHead).html("Arbeit von " + options.name + " " + options.year + "xHIT")
-
-
-    $(selectorMap.title).html(options.name + ": Home")
-    
-
-    
-    fs.writeFileSync('./output/imgLayout/footer02.png', text2png(options.name + " ::: Wexstraße 19-23 ::: 1200 Wien ::: " + options.username + "(at)student.tgm.ac.at", {color: "black"}));
-
-    $(selectorMap.footerImg).attr("src", "imgLayout/footer02.png");
-    
-
-    let semester = options.year * 2
-    
-    let title = $(selectorMap.mainArticle)
-    title = title.children("h1")
-    
-    $(title[0]).html("Kompetenzen des " + (semester - 1) + ". Semesters")
-    $(title[1]).html("Kompetenzen des " + (semester) + ". Semesters")
-
-
-    let topNavElems = $(selectorMap.topNav).children()
-    let sideNavElems = $(selectorMap.sideNav).children()
-
-    fs.readFile("./output/01TREE/01smart.html", (err, buff) => {
-      if (err) return console.log(err);
+      console.log("Parsing Home...");
       
-
-
-      let i = 0
-      for (let teacher in options.teachers) {
-        let comps = options.teachers[teacher]
   
-        $(topNavElems[i + 1]).html("Prof. " + teacher).attr("href", teacher + "/" + comps.first + ".html")
-        $(sideNavElems[i]).html("Prof. " + teacher).attr("href", teacher + "/" + comps.first + ".html")
+      let $ = cheerio.load(fs.readFileSync("./output/index.html"))
+      $(selectorMap.yearHead).html("Schuljahr " + year)
+      $(selectorMap.vornameHead).html("Arbeit von " + options.name + " " + options.year + "xHIT")
   
-        console.log("Parsing " + teacher + "...");
-        
+  
+      $(selectorMap.title).html(options.name + ": Home")
+      
+  
+      
+      fs.writeFileSync('./output/imgLayout/footer02.png', text2png(options.name + " ::: Wexstraße 19-23 ::: 1200 Wien ::: " + options.username + "(at)student.tgm.ac.at", {color: "black"}));
+  
+      $(selectorMap.footerImg).attr("src", "imgLayout/footer02.png");
+      
+  
+      let semester = options.year * 2
+      
+      let title = $(selectorMap.mainArticle)
+      title = title.children("h1")
+      
+      $(title[0]).html("Kompetenzen des " + (semester - 1) + ". Semesters")
+      $(title[1]).html("Kompetenzen des " + (semester) + ". Semesters")
+  
+  
+      let topNavElems = $(selectorMap.topNav).children()
+      let sideNavElems = $(selectorMap.sideNav).children()
+  
+      fs.readFile("./source/01TREE/01smart.html", (err, buff) => {
+        if (err) return console.log(err);
         
   
-        comps.ea((comp) => {
-          write("./output/" + teacher + "/" + comp + ".html", createSubpage(
-            teacher, 
-            options.teachers, 
-            comp, 
-            cheerio.load(buff), 
-            options
-          )
-          .html());
-        })
   
-        i++;
-      }
-      
-      
-  
-      write("./output/index.html", $.html())
-
-
-      
-
-      rimraf('./output/01TREE/*', async () => {
-        await upload("test", options)
-
-        console.log("end");
+        let i = 0
+        for (let teacher in options.teachers) {
+          let comps = options.teachers[teacher]
+    
+          $(topNavElems[i + 1]).html("Prof. " + teacher).attr("href", teacher + "/" + comps.first + ".html")
+          $(sideNavElems[i]).html("Prof. " + teacher).attr("href", teacher + "/" + comps.first + ".html")
+    
+          console.log("Parsing " + teacher + "...");
+          
+          
+    
+          comps.ea((comp) => {
+            write("./output/" + teacher + "/" + comp + ".html", createSubpage(
+              teacher, 
+              options.teachers, 
+              comp, 
+              cheerio.load(buff), 
+              options
+            )
+            .html());
+          })
+    
+          i++;
+        }
         
-      });
+        
+    
+        write("./output/index.html", $.html())
+
+        //await upload("test", options)
+
+        console.log("Done. The generated website can be found in " + path.join(__dirname, "output"));
+          
+        
+      })
     })
+    
     
   });
     
-})
+}
 
 function createSubpage(teacher: string, teachers: {[teacher: string]: string[]}, competence: string, $: CheerioStatic, options: any): CheerioStatic {
   $(selectorMap.yearHead).html("Schuljahr " + year)

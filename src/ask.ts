@@ -1,31 +1,27 @@
 import * as inquirer from "inquirer";
+import main from "./index";
 
 
-export default async function () {
-  return {
-    name: "Maximilian Mairinger",
-    year: 4,
-    upload: false,
-    username: "mmairinger",
-    password: "",
-    teachers: {
-      Trenner: [
-        "Smartphonebild",
-        "Stopmotion",
-        "Portrait",
-        "Tiefenschärfe",
-        "Film"
-      ],
-      Brein: [
-        "Webshop",
-        "Andere Sachen"
-      ],
-      Zakall: [
-        "Nix",
-        "Einfach ganix"
-      ]
-    }
-  };
+
+let options =  {
+  name: "Maximilian Mairinger",
+  year: 4,
+  username: "mmairinger",
+  teachers: {
+    Trenner: [
+      "Cuts",
+    ],
+    Wimberger: [
+      "Roboter",
+      "Schwert"
+    ],
+    Wildling: [
+      "Zeichnen"
+    ]
+  }
+}
+
+main(options)
 
   // let ans: {name: string, teachers: string, year: number, upload: boolean, username: string, password: string} = await inquirer.prompt([
   //   {name: "name", message: "Full name"},
@@ -44,5 +40,5 @@ export default async function () {
   //   return ans
   // }
   // else return ans
-}
+
 
