@@ -1,6 +1,10 @@
-import * as Ftp from "ftp-deploy";
+import * as Client from "ssh2-sftp-client";
 import * as path from "path"
-const ftp = new Ftp();
+import * as fs from "fs";
+
+
+
+
 
 
 
@@ -8,10 +12,27 @@ const ftp = new Ftp();
 
 
 let remote = "projekte.tgm.ac.at"
-let remoteDir = "/htdocs"
+let remoteDir = "/htdocs/test123"
 let port = 22
 
 export default async function(dir: string, options: {username: string, password: string}) {
+
+
+  // let sftp = new Client();
+  //
+  // sftp.connect({
+  //   host: remote,
+  //   port,
+  //   username: options.username,
+  //   password: options.password
+  // }).then(() => {
+  //   return path.join(__dirname, "../test");
+  // }).then(data => {
+  //   console.log(data, 'the data info');
+  // }).catch(err => {
+  //   console.log(err, 'catch error');
+  // });
+
   // let config = {
   //   user: options.username,
   //   password: options.password,
@@ -27,10 +48,10 @@ export default async function(dir: string, options: {username: string, password:
   // try {
   //   console.log("upppp");
   //   console.log("suc" + await ftp.deploy(config));
-    
+  //
   // } catch (error) {
   //   console.log("err", error);
-    
+  //
   // }
-  
+
 }

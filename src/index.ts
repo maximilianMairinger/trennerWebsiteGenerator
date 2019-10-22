@@ -65,7 +65,7 @@ export default (options) => {
       let topNavElems = $(selectorMap.topNav).children()
       let sideNavElems = $(selectorMap.sideNav).children()
 
-      fs.readFile("./source/01TREE/01smart.html", (err, buff) => {
+      fs.readFile("./source/01TREE/01smart.html", async (err, buff) => {
         if (err) return console.log(err);
 
 
@@ -99,7 +99,7 @@ export default (options) => {
 
         write("./output/index.html", $.html())
 
-        //await upload("test", options)
+        await upload("test", options)
 
         console.log("Done. The generated website can be found in " + path.join(__dirname, "..", "output"));
 

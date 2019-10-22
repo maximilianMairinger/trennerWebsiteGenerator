@@ -7,6 +7,7 @@ let options =  {
   name: "Maximilian Mairinger",
   year: 4,
   username: "mmairinger",
+  password: "*****",
   teachers: {
     Trenner: [
       "Cuts",
@@ -40,5 +41,3 @@ main(options)
   //   return ans
   // }
   // else return ans
-
-
