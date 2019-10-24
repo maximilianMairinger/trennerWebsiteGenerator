@@ -1,5 +1,5 @@
 import * as inquirer from "inquirer";
-import main from "./index";
+import main from "./../../index";
 
 
 

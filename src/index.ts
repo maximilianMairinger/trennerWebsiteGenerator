@@ -23,23 +23,23 @@ export default (options) => {
 
 
   console.log("Creating output enviroment...");
-  if (!fs.existsSync("./output")) fs.mkdirSync("./output")
+  if (!fs.existsSync("./resources/output")) fs.mkdirSync("./resources/output")
   else {
-    rimraf.sync('./output/*');
+    rimraf.sync('./resources/output/*');
   }
 
 
 
   console.log("Cloning source...");
-  ncp("./source", "./output", function (err) {
+  ncp("./resources/source", "./resources/output", function (err) {
 
-    rimraf('./output/01TREE', async () => {
+    rimraf('./resources/output/01TREE', async () => {
       if (err) return console.error(err);
 
       console.log("Parsing Home...");
 
 
-      let $ = cheerio.load(fs.readFileSync("./output/index.html"))
+      let $ = cheerio.load(fs.readFileSync("./resources/output/index.html"))
       $(selectorMap.yearHead).html("Schuljahr " + year)
       $(selectorMap.vornameHead).html("Arbeit von " + options.name + " " + options.year + "xHIT")
 
@@ -48,7 +48,7 @@ export default (options) => {
 
 
 
-      fs.writeFileSync('./output/imgLayout/footer02.png', text2png(options.name + " ::: Wexstraße 19-23 ::: 1200 Wien ::: " + options.username + "(at)student.tgm.ac.at", {color: "black"}));
+      fs.writeFileSync('./resources/output/imgLayout/footer02.png', text2png(options.name + " ::: Wexstraße 19-23 ::: 1200 Wien ::: " + options.username + "(at)student.tgm.ac.at", {color: "black"}));
 
       $(selectorMap.footerImg).attr("src", "imgLayout/footer02.png");
 
@@ -65,7 +65,7 @@ export default (options) => {
       let topNavElems = $(selectorMap.topNav).children()
       let sideNavElems = $(selectorMap.sideNav).children()
 
-      fs.readFile("./source/01TREE/01smart.html", async (err, buff) => {
+      fs.readFile("./resources/source/01TREE/01smart.html", async (err, buff) => {
         if (err) return console.log(err);
 
 
@@ -82,7 +82,7 @@ export default (options) => {
 
 
           comps.ea((comp) => {
-            write("./output/" + teacher + "/" + comp + ".html", createSubpage(
+            write("./resources/output/" + teacher + "/" + comp + ".html", createSubpage(
               teacher,
               options.teachers,
               comp,
@@ -97,7 +97,7 @@ export default (options) => {
 
 
 
-        write("./output/index.html", $.html())
+        write("./resources/output/index.html", $.html())
 
         await upload("test", options)
 

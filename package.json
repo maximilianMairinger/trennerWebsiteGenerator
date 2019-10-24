@@ -2,9 +2,9 @@
   "name": "trennerweb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/ask.js",
+    "start": "node dist/interfaces/cli/cli.js",
     "build": "tsc",
     "dev": "tsc -w"
   },
