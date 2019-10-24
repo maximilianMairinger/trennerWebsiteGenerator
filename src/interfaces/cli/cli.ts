@@ -1,43 +1,60 @@
-import * as inquirer from "inquirer";
+import * as fs from "fs";
+import * as path from "path";
+import validateData from "./validateData"
 import main from "./../../index";
+import inquirer from "./inquirer";
+require("xrray")(Array)
+
+
+ 
 
 
 
-let options =  {
-  name: "Maximilian Mairinger",
-  year: 4,
-  username: "mmairinger",
-  password: "*****",
-  teachers: {
-    Trenner: [
-      "Cuts",
-    ],
-    Wimberger: [
-      "Roboter",
-      "Schwert"
-    ],
-    Wildling: [
-      "Zeichnen"
-    ]
-  }
+let invalidConfig: boolean | string = false
+let conf: any;
+try {
+  conf = JSON.parse(fs.readFileSync(path.join(__dirname, "./../../../resources/config.json")).toString())
+}
+catch(e) {
+  invalidConfig = "parse"
 }
 
-main(options)
+let errors = validateData(conf)
+if (!errors.empty) invalidConfig = "schema"
 
-  // let ans: {name: string, teachers: string, year: number, upload: boolean, username: string, password: string} = await inquirer.prompt([
-  //   {name: "name", message: "Full name"},
-  //   {name: "jahrgang", message: "year", type: "number", choices: [1,2,3,4,5]},
-  //   {name: "teacher", message: "teacher(s) given json"},
-  //   {name: "upload", message: "Would you like to upload the result?", type: "confirm"}
-  // ])
 
-  // if (ans.upload) {
-  //   let ans2 = await inquirer.prompt([
-  //     {name: "username"},
-  //     {name: "password", type: "password", mask: true},
-  //   ])
-  //   ans.username = ans2.password
-  //   ans.password = ans2.password
-  //   return ans
-  // }
-  // else return ans
+if (invalidConfig) {
+  let log = "Unable to fetch config from \"resources/config.json\". "
+  if (invalidConfig === "parse") log += "An error occured while parsing the json.\n\n"
+  else if (invalidConfig === "schema") {
+    log += "The schema is not valid. The following error"
+    if (errors.length > 1) log += "s have"
+    else log += " has"
+    log += " been found:\n\n"
+
+    errors.ea((e) => {
+      log += "\t" + e.stack.substr(9) + "\n"
+    })
+
+    log += "\n"
+  }
+
+  log += "Continuing with inquiry.\n"
+
+  console.log(log);
+
+
+  inquirer().then((conf) => {
+    console.log("main", JSON.stringify(conf, null, "  "))
+  })
+}
+
+
+
+
+
+
+// conf = JSON.parse().toString());
+// main(conf)
+
+  

@@ -1,0 +1,29 @@
+
+{
+  "name": "Maximilian Mairinger",
+  "year": 4,
+  "username": "mmairinger",
+  "password": "******",
+  "teachers": {
+    "0": {
+      "name": "Trenner",
+      "competencies": [
+        "Cuts",2
+      ]
+    },
+    "1": {
+      "name": "Wimberger",
+      "competencies": [
+        "Roboter",
+        "Schwert"
+      ]
+    },
+    "2": {
+      "name": "Wildling",
+      "competencies": [
+        "Zeichnen"
+      ]
+    }
+  }
+}
+

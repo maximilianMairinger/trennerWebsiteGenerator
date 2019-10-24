@@ -5,6 +5,7 @@
     "target": "esnext",
     "moduleResolution": "node",
     "allowJs": true,
-    "sourceMap": false
+    "sourceMap": false,
+    "resolveJsonModule": true
   }
 }
