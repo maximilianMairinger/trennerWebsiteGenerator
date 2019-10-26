@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/interfaces/cli/cli.js",
+    "debug": "nodedebug dist/interfaces/cli/cli.js",
     "build": "tsc",
     "dev": "tsc -w"
   },
