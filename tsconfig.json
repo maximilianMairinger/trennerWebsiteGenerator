@@ -7,5 +7,6 @@
     "allowJs": true,
     "sourceMap": false,
     "resolveJsonModule": true
-  }
+  },
+  "exclude": ["./src/interfaces/web/view"]
 }
