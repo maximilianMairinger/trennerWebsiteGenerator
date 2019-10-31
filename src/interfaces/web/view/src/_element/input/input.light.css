@@ -1,0 +1,14 @@
+input {
+  color: black;
+  background: white;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+input:focus {
+  border: 1px solid grey;
+}
+
+
+input-placeholder {
+  color: black;
+}

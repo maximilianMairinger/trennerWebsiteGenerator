@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s ease;
+}
+
+
+bi-option-img-container {
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  display: block;
+  width: 75px;
+  height: 75px;
+  transition: .2s ease;
+}
+
+
+:host(:focus) > bi-option-img-container {
+  transform: scale(1.115);
+}
+
+:host(:focus) {
+  background: rgba(0, 0, 0, .025);
+}

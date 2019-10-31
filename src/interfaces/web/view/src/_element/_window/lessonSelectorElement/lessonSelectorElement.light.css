@@ -1,0 +1,12 @@
+lesson-selector-element-body {
+  color: #999999;
+}
+
+lesson-selector-element-body.active {
+  color:black;
+  background: white;
+}
+
+:host(:focus-within) {
+  background: rgba(0,0,0,.07);
+}

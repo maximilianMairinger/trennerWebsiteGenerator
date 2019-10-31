@@ -1,0 +1,6 @@
+c-student-count-indicator {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  z-index: 5
+}

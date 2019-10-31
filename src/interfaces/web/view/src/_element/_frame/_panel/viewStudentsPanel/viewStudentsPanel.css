@@ -1,0 +1,29 @@
+:host {
+  overflow-x: hidden;
+}
+
+c-student-card-wrapper-manager {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+}
+
+card-subject {
+  height: 100%;
+}
+
+c-lesson-selector {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+c-finder-bar {
+  right: 0;
+  margin-right: -350px;
+  height: 100%;
+  width: 350px;
+  position: absolute;
+  z-index: 4;
+}

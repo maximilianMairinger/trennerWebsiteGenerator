@@ -1,0 +1,22 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 3fr 1fr;
+}
+
+user-options-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+c-avatar {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

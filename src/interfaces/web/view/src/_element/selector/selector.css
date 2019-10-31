@@ -1,0 +1,67 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+selector-body {
+  background: #707070;
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+selector-body.bottomArrow:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  border: 8px solid transparent;
+  left: 50%;
+  border-bottom: 0;
+  margin-left: -8px;
+  margin-bottom: -8px;
+}
+
+selector-body.rightArrow:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right: 0;
+  margin-top: -8px;
+  margin-right: -8px;
+}
+
+selector-body.leftArrow:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+selector-body.topArrow:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: 0;
+  margin-left: -8px;
+  margin-top: -8px;
+}

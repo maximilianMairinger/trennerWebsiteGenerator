@@ -1,0 +1,12 @@
+:host {
+  box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.5);
+}
+
+c-page-options-element {
+  width: 100%;
+  height: auto;
+}
+page-option-container {
+  display: block;
+  overflow: hidden;
+}

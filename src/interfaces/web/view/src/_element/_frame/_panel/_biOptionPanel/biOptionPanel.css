@@ -1,0 +1,17 @@
+:host {
+  box-sizing: border-box;
+  padding: 70px 20px;
+}
+
+c-bi-option-button {
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  transition: .3s;
+}
+
+c-bi-option-button.active {
+  background: rgba(0, 0, 0, .045);
+}

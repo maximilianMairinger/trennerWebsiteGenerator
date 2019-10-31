@@ -1,0 +1,19 @@
+text-elem {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+c-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+lesson-selector-element-body {
+  width: 100%;
+  height: 100%;
+}

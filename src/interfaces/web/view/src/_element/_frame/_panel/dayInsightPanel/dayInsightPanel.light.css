@@ -1,0 +1,8 @@
+period-selector {
+  box-shadow: 0px -11px 13px 0px rgba(0,0,0,.1);
+  background: rgba(0,0,0,.05);
+}
+
+:host {
+  transition: background-color .2s;
+}

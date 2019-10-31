@@ -1,0 +1,11 @@
+:host {
+  background: #191919;
+}
+
+input {
+  background: #191919;
+}
+
+search-img {
+  background-image: url("./../../../assets/search.dark.svg");
+}

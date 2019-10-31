@@ -1,0 +1,12 @@
+selector-body.rightArrow:after {
+  border-left-color: #707070;
+}
+selector-body.bottomArrow:after {
+  border-top-color: #707070;
+}
+selector-body.leftArrow:after {
+  border-right-color: #707070;
+}
+selector-body.topArrow:after {
+  border-bottom-color: #707070;
+}

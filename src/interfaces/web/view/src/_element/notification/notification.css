@@ -1,0 +1,163 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+
+notification-container {
+  display: flex;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+notification-side {
+  width: 15%;
+}
+
+notification-section {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+notification-heading-text {
+  font-size: 11pt;
+  padding: 10px;
+  padding-right: 5px;
+  width: 67%;
+}
+
+notification-heading-options {
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+  width: 33%;
+}
+
+notification-heading-section {
+  display:flex;
+}
+
+info-text {
+  font-size: 9pt;
+  padding: 10px;
+}
+
+notification-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+notification-close-button {
+    background-image: url("./../../../assets/close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    order: 2;
+    opacity: 0.3;
+    margin-right: 15px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+notification-close-button:hover {
+    opacity: 1;
+}
+
+notification-close-all {
+    white-space: nowrap;
+    font-size: 9pt;
+    text-align: center;
+    line-height: 20px;
+    order: 1;
+    display: block;
+    width: 47px;
+    margin-right: 7px;
+    height: 20px;
+    cursor: pointer;
+}
+
+notification-close-all:hover {
+    color: black;
+}
+
+
+
+
+
+notification-side.information {
+  background: #1282E6;
+}
+
+notification-heading-section.information {
+  background: #7EBEF7;
+  color: #163D80;
+  border-bottom: 1px solid #6ea0cc;
+}
+
+info-text.information {
+  background: #9fccf4;
+  color: #163D80;
+}
+
+notification-icon.information {
+  background-image: url("./../../../assets/information.svg");
+}
+
+
+
+
+
+
+
+
+notification-side.success {
+  background: #2AA143;
+}
+
+notification-heading-section.success {
+  background: #72DA87;
+  color: #36774A;
+  border-bottom: 1px solid #60b270;
+}
+
+info-text.success {
+  background: #8bf4a0;
+  color: #36774A;
+}
+
+notification-icon.success {
+  background-image: url("./../../../assets/information.svg");
+}
+
+
+
+
+
+notification-side.error {
+  background: #d13b2e;
+}
+
+notification-heading-section.error {
+  background: #e89d96;
+  color: #841f0e;
+  border-bottom: 1px solid #d18e88;
+}
+
+info-text.error {
+  background:#efbbb6;
+  color: #841f0e;
+}
+
+notification-icon.error {
+  background-image: url("./../../../assets/fire1.svg");
+}

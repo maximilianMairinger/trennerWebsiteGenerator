@@ -1,0 +1,25 @@
+:host {
+  display: inline-block;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+c-student-search-auto-complete {
+  position: absolute;
+  display: block;
+  top: 40px;
+  width: 100%;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+input {
+  font-size: 16px;
+  color: inherit;
+  width: calc(100% - 40px);
+  right: 0;
+  height: 40px;
+  box-sizing: border-box;
+  position: absolute;
+  border: none;
+  background: inherit;
+}

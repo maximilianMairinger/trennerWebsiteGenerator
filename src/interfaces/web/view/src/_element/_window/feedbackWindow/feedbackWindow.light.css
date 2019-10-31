@@ -1,0 +1,16 @@
+
+text-label {
+  color: #707070;
+}
+
+textarea:focus {
+  border: 1px solid rgba(0,0,0,.7);
+}
+
+textarea {
+  border: 1px solid rgba(0,0,0,.35);
+}
+
+textarea {
+  background: #F1F1F1;
+}

@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  border: none;
+  font-family: inherit;
+  resize: none;
+  color: inherit;
+}
+textarea.cursive:focus {
+  cursor: text;
+  font-style: italic;
+}
+
+editable-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: text;
+}
+
+editable-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow-y: auto;
+  opacity: 0;
+}
+
+editable-big-block {
+  display: block;
+  height: 1000px;
+}

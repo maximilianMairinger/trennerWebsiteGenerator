@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+report-a-bug-text {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin-top: 25px;
+}
+
+text-wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
+
+textarea {
+  display: flex;
+  flex-grow: 1;
+  box-sizing: border-box;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: 14px;
+  transition: .2s;
+}
+
+c-block-button {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+text-label {
+  display: block;
+  font-size: 9pt;
+  margin-bottom: 4px;
+}

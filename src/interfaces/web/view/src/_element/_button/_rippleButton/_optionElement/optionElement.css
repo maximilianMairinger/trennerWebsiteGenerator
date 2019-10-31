@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  transition: box-shadow .1s, background-color .1s;
+}
+
+option-element-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  height: 100%;
+  width: 100%;
+}

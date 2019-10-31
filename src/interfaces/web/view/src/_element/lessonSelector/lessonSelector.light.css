@@ -1,0 +1,15 @@
+:host {
+  background: #f1f1f1;
+}
+
+input {
+  background: transparent;
+}
+
+search-container {
+  background: #f1f1f1;
+}
+
+search-img {
+  background-image: url("./../../../assets/search.light.svg");
+}

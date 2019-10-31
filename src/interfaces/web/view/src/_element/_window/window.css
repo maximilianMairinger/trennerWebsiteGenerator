@@ -1,0 +1,6 @@
+:host {
+  display: block;
+  transition: border-color .3s ease, box-shadow .1s linear;
+  box-sizing: border-box;
+  position: relative;
+}

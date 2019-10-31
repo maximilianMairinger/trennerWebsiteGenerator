@@ -1,0 +1,7 @@
+hamburger-bar-body {
+  background-color: white;
+}
+
+hamburger-button {
+  background-image: url("./../../../assets/three-bars.dark.svg");
+}

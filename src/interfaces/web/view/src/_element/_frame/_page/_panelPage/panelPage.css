@@ -1,0 +1,39 @@
+:host {
+  position: relative;
+
+}
+
+.small {
+  position: absolute;
+  width: 100%;
+}
+
+c-nav {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 25%;
+  min-width: 300px;
+  z-index: 4;
+}
+
+page-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+  z-index: 3;
+}
+
+c-hamburger-bar {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+}
+
+.panel-manager {
+  bottom: 0;
+  height: 100%;
+}

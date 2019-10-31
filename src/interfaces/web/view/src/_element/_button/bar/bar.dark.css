@@ -1,0 +1,19 @@
+bar-container {
+  background: #2f2f2f;
+}
+
+:host(:focus) > bar-container:not(.selected) {
+  box-shadow: 0px 0px 12px -4px black;
+}
+
+:host(:focus) > bar-container {
+  background: #272727;
+}
+
+.selected {
+  box-shadow: 0px 0px 0px 2px #888888;
+}
+
+axis-description {
+  color: white;
+}

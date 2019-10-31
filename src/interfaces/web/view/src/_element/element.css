@@ -1,0 +1,28 @@
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(125.5,125.5,125.5,.3);
+}
+
+:host(:focus){
+  outline: none;
+}
+*:focus{
+  outline:none;
+}
+
+pre {
+  display: inline;
+  margin: 0;
+}
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}

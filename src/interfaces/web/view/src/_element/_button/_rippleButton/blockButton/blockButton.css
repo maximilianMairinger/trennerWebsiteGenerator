@@ -1,0 +1,18 @@
+:host {
+  transition: background-color .6s;
+  border-radius: 2px;
+  height: 30px;
+}
+:host(:focus) {
+  transition: .4s;
+}
+button-container {
+  display: flex;
+  height: 100%
+}
+button-text {
+  display: block;
+  font-size: 1em;
+  margin: auto 0;
+  padding: 0 15px;
+}

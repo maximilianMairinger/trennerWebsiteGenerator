@@ -1,0 +1,8 @@
+option-element-text {
+  display: block;
+  font-size: 1.3em;
+  box-sizing: border-box;
+  padding: 10px;
+  padding-left: 50px;
+  white-space: pre;
+}

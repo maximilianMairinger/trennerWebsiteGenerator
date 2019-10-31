@@ -1,0 +1,15 @@
+teacher-text {
+  color: black;
+}
+
+room-stats {
+  color: #707070;
+}
+
+mobile-view-container {
+  background: #F7F7F7;
+}
+
+.selected {
+  background: rgba(0,0,0,.08)
+}

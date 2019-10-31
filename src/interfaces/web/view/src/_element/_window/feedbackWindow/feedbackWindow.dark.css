@@ -1,0 +1,16 @@
+text-label, report-a-bug-text {
+  color: #C2C2C2;
+}
+
+textarea {
+  color: white;
+  background: #383838;
+}
+
+textarea:focus {
+  border: 1px solid rgba(255,255,255,.7);
+}
+
+textarea {
+  border: 1px solid rgba(255,255,255,.35);
+}

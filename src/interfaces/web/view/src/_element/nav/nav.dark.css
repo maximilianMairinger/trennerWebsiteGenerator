@@ -1,0 +1,17 @@
+nav-container {
+  background: #252525;
+}
+
+nav-container.shadow {
+  box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.5);
+}
+
+nav-handle {
+  background: #3a3a3a;
+}
+
+nav-handle-img {
+  margin-left: 28px;
+  height: 16px;
+  background-image: url("./../../../assets/chevron-right-light.svg");
+}

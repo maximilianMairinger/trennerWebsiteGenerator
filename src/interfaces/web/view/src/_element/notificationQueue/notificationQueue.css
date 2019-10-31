@@ -1,0 +1,18 @@
+:host {
+    display: block;
+    height: auto;
+    width: 400px;
+    max-width: 100%;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+c-notification {
+  margin-top: 8px;
+  transform: rotateX(90deg) translate(0, -20px);
+  opacity: 0;
+}

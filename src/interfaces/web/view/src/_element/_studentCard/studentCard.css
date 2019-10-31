@@ -1,0 +1,55 @@
+:host {
+  box-sizing: border-box;
+}
+
+card-body {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+r-container {
+  height: 100%;
+  position: absolute;
+  left: 60px;
+  right: 0;
+  box-sizing: border-box;
+  padding-top: 9px;
+  display: inline-block;
+}
+
+l-container {
+  height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+}
+
+student-name {
+  white-space: nowrap;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 90%;
+}
+
+card-dot {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+student-class {
+  font-size: 8pt;
+  display: block;
+}
+
+card-highlight {
+  font-weight: bold;
+}

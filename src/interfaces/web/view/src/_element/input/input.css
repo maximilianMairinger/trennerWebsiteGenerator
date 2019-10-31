@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  position: relative;
+  height: 38px;
+  width: 100%;
+  cursor: text;
+}
+input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px 13px;
+  border-radius: 2px;
+  font-size: .9em;
+}
+input:focus {
+  transition: .3s;
+}
+input-placeholder {
+  z-index: 2;
+  position: absolute;
+  margin: 10px 13px;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.invalid {
+  color: red;
+  border-color: red;
+}

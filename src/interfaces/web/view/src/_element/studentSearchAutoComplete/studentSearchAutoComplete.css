@@ -1,0 +1,29 @@
+student-search-body {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  display: block;
+  background: red;
+}
+
+
+
+c-interact-able-student-card {
+  position: relative;
+  float: left;
+  min-width: 190px;
+  width: 100%;
+}
+
+card-wrapper {
+  display: flex;
+  overflow-y: auto;
+}
+
+card-container {
+  width: 100%;
+  margin: auto 5%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}

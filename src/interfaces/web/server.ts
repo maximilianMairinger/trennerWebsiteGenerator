@@ -5,8 +5,9 @@ import * as path from "path"
 
 const app = express();
 
-function sendFile(res, p) {
-  res.sendFile(path.join(__dirname, "../../../src/interfaces/web", p));
+
+function route(p) {
+  return path.join(__dirname, "../../../src/interfaces/web/view", p);
 }
 
 
@@ -16,11 +17,26 @@ app.use(bodyParser.json());
 
 
 
-app.use("/dist", express.static("dist"));
+app.use("/dist", express.static(route("./dist/")));
 
-app.get('*', (req, res) => {
-  sendFile(res, "./view/index.html")
+app.get('/', (req, res) => {
+  res.sendFile(route("./index.html"))
 });
+
+app.get("/sse", (req, res) => {
+  res.status(200).set({
+    "connection": "keep-alive",
+    "cache-control": "no-cache",
+    "content-Type": "text/event-stream"
+  })
+
+  let i = 0
+  setInterval(() => {
+    i++
+    res.write("data: hellow world!\n\n")
+    //res.write("data " + i +  ": at " + Date.now() + "\n\n")
+  }, 200)
+})
 
 
 app.listen(1000, (err) => {

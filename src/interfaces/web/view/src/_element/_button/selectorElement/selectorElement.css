@@ -1,0 +1,12 @@
+selector-element-text {
+  display: block;
+  color: white;
+  min-width: 100px;
+  padding: 8px 20px;
+  transition: .2s;
+  cursor: pointer;
+  white-space: pre;
+}
+:host(:focus) > selector-element-text.active {
+  background: rgba(0,0,0,.1)
+}

@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+teacher-text {
+  display: block;
+  margin: 5px 10px;
+  font-size: 1.2em;
+  margin-top: 10px;
+  max-height: 70%;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+}
+
+teacher-stats {
+  margin: 10px 0px 0px 10px;
+  font-size: 1em;
+  display: block;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+room-stats {
+  margin: 2px 0px 0px 10px;
+  font-size: 1em;
+  display: block;
+}
+
+mobile-view-container {
+  position: absolute;
+  display: flow-root;
+  width: 100%;
+  height: 100%;
+}
+
+c-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
