@@ -3,10 +3,11 @@ import * as path from "path";
 import validateData from "./validateData"
 import main from "./../../index";
 import inquirer from "./inquirer";
-require("xrray")(Array);
+require("xrray").default(Array);
 
 
  
+
 
 (async () => {
   let invalidConfig: boolean | string = false
@@ -62,6 +63,6 @@ require("xrray")(Array);
   console.log("Executing with the following options.\n" + JSON.stringify(showOptions, null, 2) + "\n");
   
   await main(conf)
-  console.log("Done. The generated website can be found in " + path.join(__dirname, "..", "..", "output"));
+  console.log("Done. The generated website can be found in " + path.join(__dirname, "..", "..", "..", "resources", "output"));
   
 })()

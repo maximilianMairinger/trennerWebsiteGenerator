@@ -8,7 +8,7 @@ import schoolYear from "./schoolyear";
 import selectorMap from "./selectorMap"
 import upload from "./upload"
 
-require("xrray")(Array)
+require("xrray").default(Array)
 const ncp = require('ncp').ncp
 ncp.limit = 16;
 

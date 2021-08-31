@@ -8,5 +8,6 @@
     "sourceMap": false,
     "resolveJsonModule": true
   },
-  "exclude": ["./src/interfaces/web/view/*"]
+  "exclude": ["./src/interfaces/web/view/*"],
+  "include": ["src"]
 }
